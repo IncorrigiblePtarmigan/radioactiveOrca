@@ -4,7 +4,7 @@ angular.module('moviedash.details', [])
   // Code
   $scope.movie = selected.getStorage('movie');
 
-  $scope.reminderMsg = 'Remind Me to Leave';
+  $scope.reminderMsg = 'Set Reminder';
   var uniqueMovieId = $scope.movie.id + $scope.movie.showTime + $scope.movie.movieName;
   var alreadyClicked = false;
   var timeoutID;
@@ -18,12 +18,12 @@ angular.module('moviedash.details', [])
     timeoutID = reminderInfo[1];
 
     if (alreadyClicked) {
-      $scope.reminderMsg = 'Don\'t Remind Me';
+      $scope.reminderMsg = 'Remove Reminder';
     }
   }
 
   $scope.showTrailer = function(movie) {
-    console.log("show trailer");
+    // console.log("show trailer");
     var link = movie.trailerLink;
     if (link !== false) {
       var videoId = link.slice(link.indexOf('=') + 1);
@@ -43,7 +43,6 @@ angular.module('moviedash.details', [])
 
   $scope.closeTrailer = function() {
     $scope.$modalInstance.close('');
-
   };
 
   $scope.reminder = function(movie) {
@@ -67,14 +66,14 @@ angular.module('moviedash.details', [])
         var instance = new Notification("Leave now to catch " + movie.movieName+ " at " + movie.showTime + " @ " + movie.theaterAddress);
       }, leaveTime);
 
-      $scope.reminderMsg = 'Don\'t Remind Me';
+      $scope.reminderMsg = 'Remove Reminder';
       alreadyClicked = true;
-      $scope.btn = "btn btn-success";
+      $scope.btn = "button button-small";
     } else {
       window.clearTimeout(timeoutID);
-      $scope.reminderMsg = 'Remind Me to Leave';
+      $scope.reminderMsg = 'Set Reminder';
       alreadyClicked = false;
-      $scope.btn = "btn btn-primary";
+      $scope.btn = "button button-small";
     }
     
     // If reminder is used, the session stores the specific movie, theater, and time as a combined ID

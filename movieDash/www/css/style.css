@@ -21,6 +21,71 @@ label {
   padding-bottom: 15px;
 }
 
+.movie-details {
+  color: #FFF;
+}
+
+.movie-details-header {
+  padding: 5px 0;
+}
+
+.movie-details-body {
+  /* contains address and reminder */
+  padding: 0;
+}
+
+.address,
+.reminder {
+  float: left;
+}
+
+.address {
+  padding-right: 10px;
+  width: 66.6666%;
+}
+
+.reminder {
+  padding-left: 10px;
+  width: 33.3333%;
+  border-left: solid 1px #9DBDC6;
+  margin-bottom: 5px;
+}
+
+@media all and (max-width: 480px) {
+  .movie-details-body {
+    padding: 0;
+  }
+
+  .address,
+  .reminder {
+    float: none;
+    width: 100%;
+  }
+
+  .address {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .reminder {
+    padding: 10px 0;
+    border-left: none;
+    border-top: solid 1px #9DBDC6;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+
+.remind-button {
+  margin-bottom: 5px;
+  background-color: #FF9800;
+  font-weight: bold;
+}
+
+.map-area {
+  margin-top: 10px;
+}
+
 .black {
   background-color: #000;
   color: #FFF;
@@ -43,11 +108,11 @@ label {
 }
 
 .dark-grey {
-  background-color: #424242;
+  background-color: #272F32;
 }
 
 .marine {
-  background-color: #046380;
+  background-color: #263248;
 }
 
 .landing-cont h1 {
@@ -118,12 +183,6 @@ select {
   margin-bottom: 20px;
 }
 
-
-.button {
-  height: 2.5em;
-  font-size: inherit;
-}
-
 .zip-code-submit {
   padding-top: 20px;
 }
@@ -154,6 +213,16 @@ select {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
   margin-top: 3px;
+}
+
+.movie-details-title {
+  font-family: 'Oleo Script', cursive;
+  text-align: center;
+  color: #FF9800;
+}
+
+.movie-details-container {
+  color: #FFF;
 }
 
 .movie-container {
@@ -200,7 +269,23 @@ select {
   text-transform: uppercase;
 }
 
-.video { position: relative; }
+.video-container { 
+  position: relative; 
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .video a {
    position: absolute;
@@ -217,7 +302,7 @@ select {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 30%;
+  padding: 50%;
 }
 
 .modal-body iframe {
@@ -246,4 +331,12 @@ select {
   .movie-container {
     border-bottom-style: none;
   }
+}
+
+/* utilities */
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
