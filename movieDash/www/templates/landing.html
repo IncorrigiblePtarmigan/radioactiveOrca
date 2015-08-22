@@ -1,0 +1,59 @@
+<ion-view view-title="">
+  <ion-content class="dark-grey">
+
+  <div class="landing-header">
+    <div class="header"><h1>Movie<i class="dash">DASH</i></h1>
+    </div>
+  </div>
+
+  <div class="landing-body">
+    <div class="departure" ng-model="modality">
+      <div class="travel-mode" id="centered">Travel Mode</div>
+        <div class="mode-buttons">
+
+          <button class="button icon ion-model-s button-dark" ng-click="selectMode('driving')" ng-class="{'active': data.activeButton == 'driving'}"></button>
+
+          <button class="button icon ion-android-bicycle button-dark" ng-click="selectMode('bicycling')" ng-click="selectMode('bicycling')" ng-class="{'active': data.activeButton == 'bicycling'}"></button>
+
+          <button class="button button-dark icon ion-android-walk" ng-click="selectMode('walking')" ng-click="selectMode('walking')" ng-class="{'active': data.activeButton == 'walking'}"></button>
+
+          <button class="button icon ion-android-train button-dark" ng-click="selectMode('transit')" ng-click="selectMode('transit')" ng-class="{'active': data.activeButton == 'transit'}"></button>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="departure-time-container">
+    <div class="departure-time-string">Departure Time</div>
+      <div>
+        <ionic-timepicker etime="slots.epochTime" format="slots.format" step="slots.step" callback="timePickerCallback">
+        <div class="departure-time-button">
+          <button class="button button-block button-positive"> {{ prettyTime }} </button>
+        </div>
+        </ionic-timepicker>
+      </div>
+  </div>
+
+  <div class="location-container">
+    <button type="button" class="button icon ion-pinpoint button-location" ng-click="findLocation()"> Use My Location</button>
+  </div>
+
+  <div class="zipcode-container">
+    <form name="zipCode" ng-submit="zipSubmit(zip)">
+      <label class="item-input">
+      <div class="zipcode-inline">Or, enter your zipcode: </div>
+        <div class="item-input-inset" id="zipcode-box">
+          <input ng-model="zip" type="tel" pattern="([0-9])+(?:-?\d){4,}" class="zipcode-field" placeholder="Zipcode" required>
+          <button class="button button-location zipcode-button" ng-disabled="zipCode.$invalid">Go</button>
+        </div>
+      </label>
+    </form>
+  </div>
+
+  <div class="spinner-container">
+    <center><img class="landing-message spiffy" ng-if="isLoading" src="img/spiffygif_46x46.gif"><center>
+    <div class="landing-message" ng-if="error">{{error}}</div>
+  </div>
+
+  </ion-content>
+</ion-view>

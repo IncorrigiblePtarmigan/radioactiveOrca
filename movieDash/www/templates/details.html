@@ -1,0 +1,54 @@
+<ion-view view-title="Movie Details">
+<ion-content class="padding dark-grey">
+
+<div class="movie-details-container">
+  <h3 class="movie-details-title">{{movie.movieName}}</h3>
+  <div>
+    <div class="video-container" ng-controller="DetailsCtrl">
+    <!-- FOR TESTING ONLY -->
+    <!-- <iframe src="https://www.youtube.com/embed/zCqspczvg8o" frameborder="0" width="560" height="315"></iframe> -->
+    <!-- TODO: UNCOMMENT AND TEST W SERVER DATA -->
+    <iframe src="{{ trailerUrl }}" frameborder="0" width="560" height="315"></iframe>
+    </div>
+
+    <div class="movie-details">
+
+      <div class="movie-details-header">
+        <p class="lead">{{movie.synopsis}}</p>
+        <p ng-if="!movie.synopsis" class="text-muted"> No synopsis available </p>
+      </div>
+
+      <div class="movie-details-body clearfix">
+        <div class="address">
+          <p><strong>Rated:</strong> {{movie.rating}}</p>
+          <ul>
+            <li>{{movie.theaterName}}</li>
+            <li>{{movie.theaterAddress}}</li>
+          </ul>
+        </div><!-- /address -->
+
+        <div class="reminder">
+          <p class="text-muted"><strong>Travel Time:</strong> {{movie.transitTime}}</p>
+          <p class="orange"><strong>Showtime:</strong> {{movie.showTime}}</p>
+          <button class="button button-small remind-button" ng-class="btn" ng-click="reminder(movie)">{{ reminderMsg }}</button>
+        </div><!-- /reminder -->
+      </div><!-- /movie-details-body -->
+
+    </div>
+  </div>
+</div>
+
+<center><div class="map-area"></div></center>
+<div><map center="{{origin}}" zoom="8">
+  <directions
+    draggable="true"
+    panel="directions-panel"
+    travel-mode="{{travelMode}}"
+    transit-options="{{transit_options}}"
+    origin="{{origin}}"
+    destination="{{destination}}">
+  </directions>
+</map></div>
+
+</ion-content>
+</ion-view>

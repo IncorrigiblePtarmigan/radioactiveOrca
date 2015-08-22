@@ -3,7 +3,7 @@ angular.module('moviedash.movies', [])
 .controller('MoviesCtrl', ['$scope', '$location', 'MovieClient', 'selected', 'convert', '$modal', '$sce',
   function ($scope, $location, MovieClient, selected, convert, $modal, $sce) {
   // Bool: change depending on whether you want to use mock data
-  var developerMode = true;
+  var developerMode = false;
 
   // the mock data
   var stub = [{
@@ -57,33 +57,35 @@ angular.module('moviedash.movies', [])
 
   console.log(stub);
 
-  // loads the mock data or the server query, depending on if one 
+  // loads the mock data or the server query, depending on if one
   // is in developerMode or not.
   $scope.movies = developerMode ? stub : MovieClient.getResults().data;
 
 
-  $scope.showTrailer = function(movie) {
-    var link = movie.trailerLink;
-    if (link !== false) {
-      var videoId = link.slice(link.indexOf('=') + 1);
-      var embededUrl = 'https://www.youtube.com/embed/' + videoId;
+  // $scope.showTrailer = function(movie) {
+  //   console.log("show trailer");
+  //   var link = movie.trailerLink;
+  //   if (link !== false) {
+  //     var videoId = link.slice(link.indexOf('=') + 1);
+  //     var embededUrl = 'https://www.youtube.com/embed/' + videoId;
 
-      $scope.title = movie.movieName;
-      $scope.trailerUrl = $sce.trustAsResourceUrl(embededUrl);
+  //     $scope.title = movie.movieName;
+  //     $scope.trailerUrl = $sce.trustAsResourceUrl(embededUrl);
 
-      $scope.$modalInstance = $modal.open({
-        templateUrl: "../App/movies/videoplayer.html",
-        controller: 'MoviesCtrl',
-        size: "lg",
-        scope: $scope
-      });
-    }
-  };
+  //     $scope.$modalInstance = $modal.open({
+  //       templateUrl: "../App/movies/videoplayer.html",
+  //       controller: 'MoviesCtrl',
+  //       size: "lg",
+  //       scope: $scope
+  //     });
+  //   }
+  // };
 
-  $scope.closeTrailer = function() {
-    $scope.$modalInstance.close('');
 
-  };
+  // $scope.closeTrailer = function() {
+  //   $scope.$modalInstance.close('');
+
+  // };
 
   $scope.getLeaveTime = function() {
     var leaveTime = new Date(selected.getStorage('leavingTime'));
