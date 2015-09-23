@@ -26,16 +26,6 @@ Make finding a movie to watch a breeze!
 ![mobile-select](http://i.imgur.com/bz9yEMP.png?1)
 ![mobile-detail](http://i.imgur.com/Iv1en1J.png?1)
 
-## Web Team
-
-  - __Product Owner__: Alex Castle
-  - __Scrum Master__: Kiyomi Li
-  - __Development Team Members__: Kenneth Ho, Jeremy Hui
-
-## Web Screenshots
-
-![web-main](http://i.imgur.com/Mb2JiSL.png)
-
 ## Usage
 
 Movie Dash works in a browser. Just open it up.
