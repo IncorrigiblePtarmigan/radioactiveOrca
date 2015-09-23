@@ -28,7 +28,7 @@ Make finding a movie to watch a breeze!
 
 ## Usage
 
-Movie Dash works in a browser. Just open it up.
+Fork our repo to get started working on our project! To run the mobile app, follow all instructions below and then compile the Xcode project.
 
 ## Requirements
 
