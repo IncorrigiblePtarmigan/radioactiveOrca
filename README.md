@@ -2,26 +2,7 @@
 
 Make finding a movie to watch a breeze!
 
-![alt tag](http://i.imgur.com/Mb2JiSL.png)
-
 -----
-##Mobile Screenshots
-
-![mobile-main](http://i.imgur.com/aN1ktmE.png?1)
-![mobile-select](http://i.imgur.com/bz9yEMP.png?1)
-![mobile-detail](http://i.imgur.com/Iv1en1J.png?1)
-
-## Team
-
-  - __Product Owner__: Alex Castle
-  - __Scrum Master__: Kiyomi Li
-  - __Development Team Members__: Kenneth Ho, Jeremy Hui
-
-## Mobile Team 
-
-  - __Product Owner__: Marco Viappiani
-  - __Scrum Master__: Kiri Strack-Grose
-  - __Development Team Members__: Jennie Kim Eldon, Lambert Kuang
 
 ## Table of Contents
 
@@ -32,6 +13,28 @@ Make finding a movie to watch a breeze!
     1. [Tasks](#tasks)
 1. [Team](#team)
 1. [Contributing](#contributing)
+
+## Mobile Team 
+
+  - __Product Owner__: Marco Viappiani
+  - __Scrum Master__: Kiri Strack-Grose
+  - __Development Team Members__: Jennie Kim Eldon, Lambert Kuang
+
+##Mobile Screenshots
+
+![mobile-main](http://i.imgur.com/aN1ktmE.png?1)
+![mobile-select](http://i.imgur.com/bz9yEMP.png?1)
+![mobile-detail](http://i.imgur.com/Iv1en1J.png?1)
+
+## Web Team
+
+  - __Product Owner__: Alex Castle
+  - __Scrum Master__: Kiyomi Li
+  - __Development Team Members__: Kenneth Ho, Jeremy Hui
+
+## Web Screenshots
+
+![web-main](http://i.imgur.com/Mb2JiSL.png)
 
 ## Usage
 
